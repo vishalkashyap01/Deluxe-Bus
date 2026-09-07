@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A modern, colorful music player for curated Hindi and Bollywood playlists. Listen to classic songs with a beautiful, responsive interface.">
+  <meta name="keywords" content="Hindi songs, Bollywood songs, old Hindi songs, music player, YouTube playlist, modern music player">
+  <meta name="author" content="vishal kashyap">
+  <meta name="theme-color" content="#0f172a">
+  <meta property="og:title" content="Deluxe Bus — Modern Hindi Music Player">
+  <meta property="og:description" content="Experience music with a modern, colorful interface inspired by Spotify.">
+  <meta property="og:type" content="website">
+  <title>Deluxe Bus — Modern Hindi Music Player</title>
+  <link rel="preconnect" href="https://www.youtube.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page-shell">
+    <header class="site-header" aria-label="Main navigation">
+      <div class="header-content">
+        <a class="brand" href="#" aria-label="Deluxe Bus home">
+          <div class="brand-icon">🎵</div>
+          <span class="brand-name">Deluxe Bus</span>
+        </a>
+        <nav class="nav-menu">
+          <a href="#player" class="nav-link">Player</a>
+          <a href="https://music.youtube.com/watch?v=N0jnLZxYwYc&list=PLeatb7hupNV_AWUl_7ttbsKeCQh8tF5N4" target="_blank" rel="noopener" class="nav-link">Playlist</a>
+          <a href="#about" class="nav-link">About</a>
+        </nav>
+      </div>
+      <div class="header-status" aria-label="Live status">
+        <span class="status-pill"><i class="live-dot"></i><strong id="liveUsers">1</strong> listening</span>
+        <span class="status-pill time-pill"><span id="liveTime">--:--</span></span>
+      </div>
+    </header>
+<section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">✨ CURATED HINDI CLASSICS</p>
+        <h1 id="hero-title">Bus wale Bhaiya,<br><span class="gradient-text">ki Playlist</span></h1>
+        <p class="hero-text">
+          Experience your favorite classic Hindi and Bollywood songs with a modern, colorful interface. 
+          Pure music, no distractions—just you and the melodies you love.
+        </p>
+        <a class="hero-button" href="#player">
+          <span class="button-icon">▶</span> Listen Now
+        </a>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="floating-card card-1">
+          <div class="card-content">
+            <span class="card-emoji">🎧</span>
+            <p>Pure<br>Sound</p>
+          </div>
+        </div>
+        <div class="floating-card card-2">
+          <div class="card-content">
+            <span class="card-emoji">🎶</span>
+            <p>Classic<br>Hits</p>
+          </div>
+        </div>
+        <div class="floating-card card-3">
+          <div class="card-content">
+            <span class="card-emoji">💫</span>
+            <p>Smooth<br>Vibes</p>
+          </div>
+        </div>
+        <div class="gradient-orb orb-1"></div>
+        <div class="gradient-orb orb-2"></div>
+        <div class="gradient-orb orb-3"></div>
+      </div>
+    </section>
+
+    <section id="player" class="player-wrap" aria-label="Music player">
+      <div class="player-card">
+        <div class="album-art" id="albumArt" role="img" aria-label="Album artwork">
+          <div class="art-shine"></div>
+          <span>RETRO<br>BEATS</span>
+        </div>
+
+        <div class="track-info">
+          <p class="track-kicker">NOW PLAYING</p>
+          <h2 id="trackTitle">Your YouTube Playlist</h2>
+          <p id="trackArtist">Classic Hindi • Curated collection</p>
+
+          <div class="progress-row">
+            <span id="currentTime">0:00</span>
+            <input id="progress" type="range" min="0" max="100" value="0" aria-label="Track progress">
+            <span id="duration">--:--</span>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="prevBtn" class="control-btn" aria-label="Previous track">◀</button>
+          <button id="playBtn" class="play-btn" aria-label="Play playlist">▶</button>
+          <button id="nextBtn" class="control-btn" aria-label="Next track">▶</button>
+        </div>
+      </div>
+
+      <p class="player-note">
+        Playback is controlled directly from this custom player. Add your public playlist ID in <code>script.js</code>.
+      </p>
+    </section>
+
+    <!-- Optional playlist details section can be enabled later. -->
+    <!-- <section id="playlist" class="playlist-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">YOUR COLLECTION</p>
+          <h2>YouTube playlist</h2>
+        </div>
+        <button id="loadPlaylistBtn" class="outline-button">Load playlist</button>
+      </div> -->
+
+      <!-- <div class="playlist-card">
+        <div class="playlist-cover">
+          <div class="mini-record"></div>
+        </div>
+        <div>
+          <h3 id="playlistName">Retro Hindi Classics</h3>
+          <p>Use a public YouTube / YouTube Music playlist ID to connect your collection.</p>
+          <div class="playlist-meta">
+            <span>Hindi</span>
+            <span>Bollywood</span>
+            <span>90s & classics</span>
+          </div>
+        </div>
+      </div> -->
+
+      <!-- YouTube IFrame API host. It stays visually hidden; playback is controlled by the custom player above. -->
+      <div id="youtubePlayer" class="youtube-player" aria-hidden="true"></div>
+    </section>
+
+    <section id="about" class="about-section">
+      <p class="eyebrow">ABOUT</p>
+      <h2>Design by Vishal with &hearts;</h2>
+      <p>
+        The interface keeps the focus on the song: responsive layout, accessible controls,
+        lightweight styling, semantic HTML, and metadata for search engines and social sharing.
+      </p>
+    </section>
+
+    <footer>
+      <span>© <span id="year"></span> Deluxe Bus • Built with 🎵 & Design</span>
+      <span>Powered by YouTube • Real-time presence</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
